@@ -1,39 +1,65 @@
-html{
+html {
     box-sizing: border-box;
-    font-size: 62.5%; /*Reset para REMS -62.5% = 10px de 16px*/
+    font-size: 62.5%;
+    /*Reset para REMS -62.5% = 10px de 16px*/
 }
-*,*:before,*:after{
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
+
 /*Globales*/
-img{
-    max-width: 100%; /*Las imagenes ocupan como maximo el 100% de su sección asignada*/
+
+img {
+    max-width: 100%;
+    /*Las imagenes ocupan como maximo el 100% de su sección asignada*/
 }
-.contenedor{
-    max-width: 120rem; /* = 1200px*/ /*Ancho máximo*/
-    margin: 0 auto 0 auto; /*da margen de acuerdo al contenido externo*/
+
+.contenedor {
+    width: 85%;
+    max-width: 120rem;
+    /* = 1200px*/
+    /*Ancho máximo*/
+    margin: 0 auto 0 auto;
+    /*da margen de acuerdo al contenido externo*/
 }
-body{
+
+@media ( min-width: 768px) {
+    .boton {
+        display: inline-block;
+        flex: 0 0 auto;
+    }
+}
+
+body {
     font-family: 'Lato', sans-serif;
-    font-size:  1.6rem;
+    font-size: 1.6rem;
     line-height: 1.5;
 }
-h1{
+
+h1 {
     font-size: 3.8rem;
 }
-h2{
+
+h2 {
     font-size: 3.4rem;
 }
-h3{
+
+h3 {
     font-size: 3rem;
 }
-h4{
+
+h4 {
     font-size: 2.6rem;
 }
 
+
 /*botones*/
-.boton{
+
+.boton {
     text-transform: uppercase;
     color: white;
     font-weight: 700;
@@ -45,129 +71,204 @@ h4{
     text-align: center;
     border: none;
     border-radius: .3rem;
+    display: block;
+    flex: 0 0 100%;
 }
 
-.boton:hover{
+.boton:hover {
     cursor: pointer;
 }
 
-.boton-amarillo{
+.boton-amarillo {
     background-color: #E08709;
 }
-.boton-verde{
+
+.boton-verde {
     background-color: #71b100;
 }
 
+
 /*utilidades*/
-.seccion{
-    margin-top: 2rem; /*Margen externo superior*/
-    margin-bottom: 2rem; /*Margen externo inferior*/
+
+.seccion {
+    margin-top: 2rem;
+    /*Margen externo superior*/
+    margin-bottom: 2rem;
+    /*Margen externo inferior*/
 }
-.fw-300{
+
+.fw-300 {
     font-weight: 300;
 }
-.centrar-texto{
+
+.centrar-texto {
     text-align: center;
 }
-.mayusculas{
+
+.mayusculas {
     text-transform: uppercase;
 }
-.dblock{
+
+.dblock {
     display: block;
 }
-.contenido-centrado{
+
+.contenido-centrado {
     max-width: 80rem;
 }
 
+
 /*encabezado del sitio*/
-.site-header{
+
+.site-header {
     background-color: #333333;
     padding: 1rem 0 rem 3 rem 0 rem;
 }
-.site-header.inicio{
+
+.site-header.inicio {
     background-image: url(../img/header.jpg);
     background-position: center;
     background-size: cover;
     height: 100vh;
-    min-height: 60rem; /*= 600px*/
-}
-.contenido-header{
-    height: 100%;/*Asigna el 100% del contenido*/
-    display: flex; /*Propiedad flex*/
-    flex-direction: column; /*Cambia distribución, lo hace vertizalmente*/
-    justify-content: space-between; /*Da margen entre los contenidos*/
-}
-.contenido-header h1{
-    color: white;
-    padding-bottom: 2rem;/*Separación dentro del elemento*/
-    max-width: 60rem; /*Ancho máximo*/
-    line-height: 2; /*interlineado*/
-}
-.barra{
-    display: flex; /*propiedad flex*/
-    flex-direction: row; /*Cambia distribución, lo hace horizontalmente*/
-    justify-content: space-between;/*Crea espacio en medio de la sección de elementos*/
-    padding-top: 3rem; /*Da margen dentro de la sección*/
+    min-height: 60rem;
+    /*= 600px*/
 }
 
-.navegacion a{
+.contenido-header {
+    height: 100%;
+    /*Asigna el 100% del contenido*/
+    display: flex;
+    /*Propiedad flex*/
+    flex-direction: column;
+    /*Cambia distribución, lo hace vertizalmente*/
+    justify-content: space-between;
+    /*Da margen entre los contenidos*/
+    text-align: center;
+}
+
+@media ( min-width: 768px) {
+    .contenido-header {
+        text-align: left;
+    }
+}
+
+.contenido-header h1 {
+    color: white;
+    padding-bottom: 2rem;
+    /*Separación dentro del elemento*/
+    max-width: 60rem;
+    /*Ancho máximo*/
+    line-height: 2;
+    /*interlineado*/
+}
+
+.barra {
+    padding-top: 3rem;
+}
+
+@media ( min-width: 768px) {
+    .barra {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion a {
     color: white;
     text-decoration: none;
-    font-size: 1.8rem; /* == 18 px*/
-    margin-right: 2rem; /*Separación hacia su derecha a partir de su exterior de la caja*/
+    font-size: 2.2rem;
+    display: block;
 }
 
-.navegacion a:hover{
+@media ( min-width: 768px) {
+    .navegacion a {
+        display: inline-block;
+        margin-right: 2rem;
+        font-size: 1.8rem;
+    }
+}
+
+.navegacion a:hover {
     color: #71b100;
 }
 
-.navegacion a:last-of-type{ /*Al último elemento del tipo, se le aplican los siguientes estilos*/
-    margin-right: 0;/*margen externo de 0, esto ayuda a mantener centrado el contenido*/
+.navegacion a:last-of-type {
+    margin-right: 0;
 }
 
-.iconos-nosotros{
-    display: flex; /*aplicamos propiedad flex*/
-    flex-direction: row; /*indicamos la dirección del flex*/
-    justify-content: space-between; /*creamos los espacios similares enmedio*/
+@media ( min-width: 768px) {
+    .navegacion a:last-of-type {
+        margin-right: 0;
+    }
 }
 
-.icono{
-    flex-basis: calc(33.3% - 1rem); /*Reparte el ancho disponible de manera adecuada, no se usa widht, debido a que en esta sección usa flex*/
-    text-align: center; /*centramos contenido*/
+
+/*Iconos nosotros*/
+
+@media ( min-width: 768px) {
+    .iconos-nosotros {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 }
 
-.icono h3{
-    text-transform: uppercase; /*fromateamos las palabras a mayusculas*/
+.icono {
+    text-align: center;
 }
+
+@media ( min-width: 768px) {
+    .icono {
+        flex-basis: calc(33.3% - 1rem);
+    }
+}
+
+.icono h3 {
+    text-transform: uppercase;
+    /*fromateamos las palabras a mayusculas*/
+}
+
+
 /*Anuncios*/
-.contenedor-anuncios{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.anuncio{
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: calc(33% - 1rem);
 
-    margin-bottom: 2rem;
-    border-style: solid;
-    border-color: #b5b5b5;
-    border-width: 0.1em;
-    background: #f5f5f5;
+@media ( min-width: 768px) {
+    .contenedor-anuncios {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 }
-.contenido-anuncio{
+
+.anuncio {
+    border: 1px solid #b5b5b5;
+    background-color: #f5f5f5;
+    margin-bottom: 2rem;
+}
+
+@media ( min-width: 768px) {
+    .anuncio {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+
+.contenido-anuncio {
     padding: 2rem;
 }
-.contenido-anuncio h3, .contenido-anuncio p{
+
+.contenido-anuncio h3,
+.contenido-anuncio p {
     margin: 0;
 }
-.precio{
+
+.precio {
     color: #71b100;
     font-weight: 700;
 }
-.iconos-caracteristicas{
+
+.iconos-caracteristicas {
     list-style: none;
     padding: 0;
     display: flex;
@@ -176,74 +277,95 @@ h4{
     max-width: 50rem;
     flex: 1;
 }
-.iconos-caracteristicas li{
+
+.iconos-caracteristicas li {
     display: flex;
 }
-.iconos-caracteristicas li img{
-    margin-right: 2rem;
 
+.iconos-caracteristicas li img {
+    margin-right: 2rem;
 }
-.ver-todas{
+
+.ver-todas {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
+
+
 /** Contacto Home**/
-.imagen-contacto{
+
+.imagen-contacto {
     background-image: url(../img/encuentra.jpg);
     background-position: center center;
     background-size: cover;
     height: 40rem;
-
     display: flex;
     align-items: center;
 }
-.contenido-contacto{
-    flex :1;
+
+.contenido-contacto {
+    flex: 0 0 90%;
     color: white;
 }
-.contenido-contacto p{
+
+.contenido-contacto p {
     font-size: 1.8rem;
 }
 
+
 /*seccion inferior*/
-.seccion-inferior{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+
+@media ( min-width: 768px) {
+    .seccion-inferior {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .seccion-inferior .blog {
+        flex-basis: 60%;
+    }
+    .seccion-inferior .testimoniales {
+        flex-basis: calc(40% - 2rem);
+    }
 }
-.seccion-inferior .blog{
-    flex-basis: 60%;
-}
-.seccion-inferior .testimoniales{
-    flex-basis: calc(40% - 2rem);
-}
-.entrada-blog{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+
+.entrada-blog {
     margin-bottom: 2rem;
 }
 
-.entrada-blog:last-of-type{
+@media ( min-width: 768px) {
+    .entrada-blog {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.entrada-blog:last-of-type {
     margin-bottom: 0;
 }
 
-.entrada-blog .imagen{
-    flex-basis: 40%;
+@media ( min-width: 768px) {
+    .entrada-blog .imagen {
+        flex-basis: 40%;
+    }
+    .entrada-blog .texto-entrada {
+        flex-basis: calc(60% - 3rem);
+    }
 }
-.entrada-blog .texto-entrada{
-    flex-basis: calc(60% - 3rem);
-}
-.texto-entrada a{
+
+.texto-entrada a {
     color: black;
     text-decoration: none;
 }
-.texto-entrada h4{
+
+.texto-entrada h4 {
     margin: 0;
     line-height: 1.5;
 }
-.texto-entrada h4::after{
+
+.texto-entrada h4::after {
     content: '';
     display: block;
     margin-top: 1rem;
@@ -251,10 +373,14 @@ h4{
     height: 0.5rem;
     background-color: #71b100;
 }
-.texto-entrada span{
+
+.texto-entrada span {
     color: #E08709;
 }
+
+
 /*Testimoniales*/
+
 .testimonial {
     background-color: #71b100;
     font-size: 2.4rem;
@@ -263,10 +389,12 @@ h4{
     border-radius: 6rem;
     border-bottom-right-radius: 0rem;
 }
-.testimonial p{
+
+.testimonial p {
     text-align: right;
 }
-.testimonial blockquote::before{
+
+.testimonial blockquote::before {
     content: '';
     background-image: url(../img/comilla.svg);
     width: 4rem;
@@ -275,35 +403,61 @@ h4{
     position: absolute;
     left: -0.5rem;
 }
-.testimonial blockquote{
+
+.testimonial blockquote {
     position: relative;
     padding-left: 5rem;
     font-weight: 100;
 }
 
+
 /*footer*/
-.site-footer{
+
+.site-footer {
     background-color: #333333;
     margin-bottom: 0;
 }
-.contenedor-footer{
+
+.contenedor-footer {
     padding: 3rem 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    text-align: center;
 }
-.copyright{
+
+@media ( min-width: 768px) {
+    .contenedor-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.site-footer nav {
+    display: none;
+}
+
+@media ( min-width: 768px) {
+    .site-footer nav {
+        display: block;
+    }
+}
+
+.copyright {
     margin-bottom: 0rem;
     color: white;
 }
+
+
 /* internas*/
-.contenido-nosotros{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 2rem;
+
+@media ( min-width: 768px) {
+    .contenido-nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 2rem;
+    }
 }
 
-.texto-nosotros blockquote{
+.texto-nosotros blockquote {
     font-weight: 900;
     font-size: 2rem;
     margin: 0;
@@ -311,40 +465,46 @@ h4{
     text-transform: capitalize;
 }
 
+
 /*Anuncio*/
-.resumen-propiedad{
+
+.resumen-propiedad {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
+
+
 /*Contacto*/
 
-form p{
+form p {
     font-size: 1.2rem;
     color: #6b6b6b;
     margin: 0;
     margin-top: 2rem;
 }
-form p:first-of-type{
+
+form p:first-of-type {
     font-size: 1.2rem;
     color: #6b6b6b;
     margin-top: 0rem;
 }
-legend{
+
+legend {
     font-size: 2rem;
     color: #6b6b6b;
 }
 
-label{
+label {
     font-weight: 700;
     text-transform: capitalize;
     display: block;
 }
 
-input:not([type="submit"]), 
+input:not([type="submit"]),
 textarea,
-select{
+select {
     padding: 1rem;
     display: block;
     width: 100%;
@@ -354,19 +514,21 @@ select{
     border-radius: 1rem;
 }
 
-input[type="radio"]{
+input[type="radio"] {
     width: auto;
     margin-bottom: 0;
 }
 
-select{
+select {
     -webkit-appearance: none;
     appearance: none;
 }
-textarea{
+
+textarea {
     height: 20rem;
 }
-.forma-contacto{
+
+.forma-contacto {
     max-width: 30rem;
     display: flex;
     flex-direction: row;
